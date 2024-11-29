@@ -15,7 +15,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:location/location.dart';
 
 class FlutterMapSearchAndPinkRoute extends StatefulWidget {
-  final String ors_ApiKey;
+
   final IconData locationPinIcon;
   final Color buttonColor;
   final Color buttonTextColor;
@@ -29,7 +29,8 @@ class FlutterMapSearchAndPinkRoute extends StatefulWidget {
   final double buttonWidth;
   final TextStyle buttonTextStyle;
   final String baseUri;
-
+  
+  final String ors_ApiKey;
   final double latidedCurrent;
   final double longtideCurrent;
 
@@ -50,10 +51,11 @@ class FlutterMapSearchAndPinkRoute extends StatefulWidget {
       this.buttonWidth = 200,
       this.baseUri = 'https://nominatim.openstreetmap.org',
       this.locationPinIcon = Icons.location_on,
-      required this.ors_ApiKey,
-      //  required this.current,
+      required this . ors_ApiKey,
       required this.latidedCurrent,
-      required this.longtideCurrent})
+      required this.longtideCurrent,
+      
+       })
       : super(key: key);
 
   @override
