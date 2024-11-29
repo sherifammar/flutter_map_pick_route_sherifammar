@@ -1,6 +1,6 @@
 name: flutter_map_pick_route_sherifammar
 description: "search location and make route"
-version: 0.0.3
+version: 0.0.4
 repository: https://github.com/sherifammar/flutter_map_pick_route_sherifammar.git
 
 environment:
