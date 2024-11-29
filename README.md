@@ -24,5 +24,8 @@ FlutterMapSearchAndPinkRoute(
 
 ```
 Then Usage
-Now if you press  button, you will get route and distance between two point.
+FlutterMapSearchAndPinkRoute(
+        center: LatLong(25, 91),// require lat and long
+       ors_ApiKey:"your key of flutter map"
+        )
 
