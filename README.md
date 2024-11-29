@@ -4,16 +4,16 @@ A flutter place search ,  location picker , make route between two points and me
 
 Features
 
-Pick location from map
 Search location by places
 Easy to use
 make route between two points
 measure distance(meters) between two point
+change location
 
 
 Getting started
 
-import 'package:flutter_map_pick_rote_sherifammar/flutter_map_pick_route_sherifammar.dart';
+import 'package:flutter_map_pick_route_sherifammar/flutter_map_pick_route_sherifammar.dart';
 
  Usage
 
