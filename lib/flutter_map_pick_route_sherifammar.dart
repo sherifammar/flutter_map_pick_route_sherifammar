@@ -175,15 +175,15 @@ class _FlutterMapSearchAndPinkRouteState
       // print(
       //     " 222222 ===== polyline >>. newlat *** ${points.latitude}  ++++++//+++++  newlong ***${points.longitude} =======  endlat *** ${points1.latitude}  ++++++//+++++  endlong ***${points1.longitude} ======= ");
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-      const  SnackBar(
-          content: Text(
-            "Failed to fetch route",
-            style: TextStyle(color: Colors.white),
-          ),
-          backgroundColor: Colors.redAccent,
-        ),
-      );
+      // ScaffoldMessenger.of(context).showSnackBar(
+      // const  SnackBar(
+      //     content: Text(
+      //       "Failed to fetch route",
+      //       style: TextStyle(color: Colors.white),
+      //     ),
+      //     backgroundColor: Colors.redAccent,
+      //   ),
+      // );
     }
     // }
   }
