@@ -1,4 +1,5 @@
-library flutter_map_pick_rote_sherifammar;
+
+library flutter_map_pick_route_sherifammar;
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:async';
@@ -97,10 +98,10 @@ class _FlutterMapSearchAndPinkRouteState
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
-          "Distance In Meters : $distanceInMeters Meters",
+          "Distance : $distanceInMeters /Meters",
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.green,
       ),
     );
     return distanceInMeters;
@@ -297,6 +298,33 @@ class _FlutterMapSearchAndPinkRouteState
                           setState(() {});
                         });
                       }),
+                         StatefulBuilder(
+                    builder: ((context, setState) {
+                      return ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: _options.length > 5 ? 5 : _options.length,
+                        itemBuilder: (context, index) {
+                          return ListTile(
+                            title: Text(_options[index].displayname),
+                            subtitle: Text(
+                                '${_options[index].lat},${_options[index].lon}'),
+                            onTap: () {
+                              _searchController.text =
+                                  _options[index].displayname;
+
+                              lat = _options[index].lat;
+                              long = _options[index].lon;
+                              print("position => $lat === $long ");
+                              _focusNode.unfocus();
+                              _options.clear();
+                              setState(() {});
+                            },
+                          );
+                        },
+                      );
+                    }),
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
@@ -351,33 +379,7 @@ class _FlutterMapSearchAndPinkRouteState
                           setState(() {});
                         });
                       }),
-                  StatefulBuilder(
-                    builder: ((context, setState) {
-                      return ListView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: _options.length > 5 ? 5 : _options.length,
-                        itemBuilder: (context, index) {
-                          return ListTile(
-                            title: Text(_options[index].displayname),
-                            subtitle: Text(
-                                '${_options[index].lat},${_options[index].lon}'),
-                            onTap: () {
-                              _searchController.text =
-                                  _options[index].displayname;
-
-                              lat = _options[index].lat;
-                              long = _options[index].lon;
-                              print("position => $lat === $long ");
-                              _focusNode.unfocus();
-                              _options.clear();
-                              setState(() {});
-                            },
-                          );
-                        },
-                      );
-                    }),
-                  ),
+               
                   StatefulBuilder(
                     builder: ((context, setState) {
                       return ListView.builder(

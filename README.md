@@ -18,10 +18,11 @@ import 'package:flutter_map_pick_route_sherifammar/flutter_map_pick_route_sherif
  Usage
 
 FlutterMapSearchAndPinkRoute(
-        center: LatLong(25, 91),
+        center: LatLong(25, 91),// require lat and long
        ors_ApiKey:"your key of flutter map"
         )
 
 ```
 Then Usage
 Now if you press  button, you will get route and distance between two point.
+
