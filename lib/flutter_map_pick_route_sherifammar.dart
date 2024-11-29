@@ -425,8 +425,7 @@ class _FlutterMapSearchAndPinkRouteState
                   height: widget.buttonHeight,
                   width: widget.buttonWidth,
                   onPressed: () async {
-                    // final value = await pickData();
-                    // widget.onPicked(value);
+                
                     await getRoute(lat!, long!, lat1!, long1!);
                     _mapController.move(LatLng(lat!, long!), 15.0);
                     getDistance(lat!, long!, lat1!, long1!);

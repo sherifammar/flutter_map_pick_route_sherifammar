@@ -13,7 +13,7 @@ measure distance(meters) between two point
 
 Getting started
 
-import 'package:flutter_map_pick_route_sherifammar/flutter_map_pick_route_sherifammar.dart';
+import 'package:flutter_map_pick_rote_sherifammar/flutter_map_pick_route_sherifammar.dart';
 
  Usage
 
