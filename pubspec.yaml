@@ -13,6 +13,7 @@ dependencies:
   flutter_map:
   geolocator: ^8.0.5
   http: ^0.13.4
+  latlong2: ^0.8.2
   location:  
   permission_handler: ^11.0.1
 
