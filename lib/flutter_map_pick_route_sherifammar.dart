@@ -398,7 +398,7 @@ class _FlutterMapSearchAndPinkRouteState
 
                               lat1 = _options1[index].lat;
                               long1 = _options1[index].lon;
-                              // print(" position - 1 => $lat1 === $long1");
+                         
 
                               _focusNode1.unfocus();
                               _options1.clear();
