@@ -31,7 +31,7 @@ class FlutterMapSearchAndPinkRoute extends StatefulWidget {
   final String hintText;
   final String hintText1;
 
-  final String ors_ApiKey;
+  final String orsApiKey;
   final double latidedCurrent;
   final double longtideCurrent;
 
@@ -52,7 +52,7 @@ class FlutterMapSearchAndPinkRoute extends StatefulWidget {
 
   
 
-    required this.ors_ApiKey,
+    required this.orsApiKey,
     required this.latidedCurrent,
     required this.longtideCurrent,
   }) : super(key: key);
@@ -93,8 +93,8 @@ class _FlutterMapSearchAndPinkRouteState
       double startlat, double startlong, double finallat, double finallong) {
     double distanceInMeters =
         Geolocator.distanceBetween(startlat, startlong, finallat, finallong);
-    print(
-        " ===== distanceInMeters >>. distanceInMeters *** $distanceInMeters ======= ");
+    // print(
+    //     " ===== distanceInMeters >>. distanceInMeters *** $distanceInMeters ======= ");
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -139,12 +139,12 @@ class _FlutterMapSearchAndPinkRouteState
     LatLng points1 = LatLng(endsearchlat1, endsearchlong1);
     markers.clear();
 
-    print(
-        " ===== polyline >>. newlat *** ${points.latitude}  ++++++//+++++  newlong ***${points.longitude} =======  endlat *** ${points1.latitude}  ++++++//+++++  endlong ***${points1.longitude} ======= ");
+    // print(
+    //     " ===== polyline >>. newlat *** ${points.latitude}  ++++++//+++++  newlong ***${points.longitude} =======  endlat *** ${points1.latitude}  ++++++//+++++  endlong ***${points1.longitude} ======= ");
 
     final response = await http.get(
       Uri.parse(
-          'https://api.openrouteservice.org/v2/directions/driving-car?api_key=${widget.ors_ApiKey}&start=${points.longitude},${points.latitude}&end=${points1.longitude},${points1.latitude}'),
+          'https://api.openrouteservice.org/v2/directions/driving-car?api_key=${widget.orsApiKey}&start=${points.longitude},${points.latitude}&end=${points1.longitude},${points1.latitude}'),
     );
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
@@ -172,13 +172,13 @@ class _FlutterMapSearchAndPinkRouteState
         ),
       );
 
-      print(
-          " 222222 ===== polyline >>. newlat *** ${points.latitude}  ++++++//+++++  newlong ***${points.longitude} =======  endlat *** ${points1.latitude}  ++++++//+++++  endlong ***${points1.longitude} ======= ");
+      // print(
+      //     " 222222 ===== polyline >>. newlat *** ${points.latitude}  ++++++//+++++  newlong ***${points.longitude} =======  endlat *** ${points1.latitude}  ++++++//+++++  endlong ***${points1.longitude} ======= ");
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            "'Failed to fetch route'",
+            "Failed to fetch route",
             style: TextStyle(color: Colors.white),
           ),
           backgroundColor: Colors.redAccent,
@@ -316,7 +316,7 @@ class _FlutterMapSearchAndPinkRouteState
 
                               lat = _options[index].lat;
                               long = _options[index].lon;
-                              print("position => $lat === $long ");
+                              // print("position => $lat === $long ");
                               _focusNode.unfocus();
                               _options.clear();
                               setState(() {});
@@ -398,7 +398,7 @@ class _FlutterMapSearchAndPinkRouteState
 
                               lat1 = _options1[index].lat;
                               long1 = _options1[index].lon;
-                              print(" position - 1 => $lat1 === $long1");
+                              // print(" position - 1 => $lat1 === $long1");
 
                               _focusNode1.unfocus();
                               _options1.clear();
