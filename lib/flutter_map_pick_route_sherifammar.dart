@@ -64,7 +64,7 @@ class FlutterMapSearchAndPinkRoute extends StatefulWidget {
 
 class _FlutterMapSearchAndPinkRouteState
     extends State<FlutterMapSearchAndPinkRoute> {
-  MapController _mapController = MapController();
+ final MapController _mapController = MapController();
   final TextEditingController _searchController = TextEditingController();
   final TextEditingController _searchController1 = TextEditingController();
 
@@ -176,7 +176,7 @@ class _FlutterMapSearchAndPinkRouteState
       //     " 222222 ===== polyline >>. newlat *** ${points.latitude}  ++++++//+++++  newlong ***${points.longitude} =======  endlat *** ${points1.latitude}  ++++++//+++++  endlong ***${points1.longitude} ======= ");
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+      const  SnackBar(
           content: Text(
             "Failed to fetch route",
             style: TextStyle(color: Colors.white),
