@@ -16,47 +16,44 @@ import 'package:location/location.dart';
 
 class FlutterMapSearchAndPinkRoute extends StatefulWidget {
 
-  final IconData locationPinIcon;
   final Color buttonColor;
   final Color buttonTextColor;
-  final Color locationPinIconColor;
-  final String locationPinText;
-  final TextStyle locationPinTextStyle;
+
+
   final String buttonText;
-  final String hintText;
-  final String hintText1;
   final double buttonHeight;
   final double buttonWidth;
   final TextStyle buttonTextStyle;
   final String baseUri;
-  
+
+  final String hintText;
+  final String hintText1;
+
   final String ors_ApiKey;
   final double latidedCurrent;
   final double longtideCurrent;
 
-  const FlutterMapSearchAndPinkRoute(
-      {Key? key,
-      this.buttonColor = Colors.blue,
-      this.locationPinIconColor = Colors.blue,
-      this.locationPinText = 'Location',
-      this.locationPinTextStyle = const TextStyle(
-          fontSize: 16, fontWeight: FontWeight.bold, color: Colors.blue),
-       this.hintText ="where you are your location",
-       this.hintText1 = "where you want to go",
-      this.buttonTextStyle = const TextStyle(
-          fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
-      this.buttonTextColor = Colors.white,
-      this.buttonText ="draw route", 
-      this.buttonHeight = 50,
-      this.buttonWidth = 200,
-      this.baseUri = 'https://nominatim.openstreetmap.org',
-      this.locationPinIcon = Icons.location_on,
-      required this . ors_ApiKey,
-      required this.latidedCurrent,
-      required this.longtideCurrent,
-      
-       })
-      : super(key: key);
+  const FlutterMapSearchAndPinkRoute({
+    Key? key,
+    this.buttonColor = Colors.blue,
+ 
+
+    this.hintText = "where you are your location",
+    this.hintText1 = "where you want to go",
+    this.buttonTextStyle = const TextStyle(
+        fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+    this.buttonTextColor = Colors.white,
+    this.buttonText = "draw route",
+    this.buttonHeight = 50,
+    this.buttonWidth = 200,
+    this.baseUri = 'https://nominatim.openstreetmap.org',
+
+  
+
+    required this.ors_ApiKey,
+    required this.latidedCurrent,
+    required this.longtideCurrent,
+  }) : super(key: key);
 
   @override
   State<FlutterMapSearchAndPinkRoute> createState() =>
@@ -89,7 +86,6 @@ class _FlutterMapSearchAndPinkRouteState
   List<LatLng> routePoints = [];
   List<Marker> markers = [];
   double? distanceInMeters = 0.0;
-
 
   getDistance(
       double startlat, double startlong, double finallat, double finallong) {
@@ -131,7 +127,7 @@ class _FlutterMapSearchAndPinkRouteState
       return null;
     }
     Position position = await Geolocator.getCurrentPosition();
- 
+
     return position;
   }
 
@@ -139,11 +135,11 @@ class _FlutterMapSearchAndPinkRouteState
       double endsearchlong1) async {
     LatLng points = LatLng(endsearchlat, endsearchlong);
     LatLng points1 = LatLng(endsearchlat1, endsearchlong1);
-     markers.clear();
+    markers.clear();
 
     print(
         " ===== polyline >>. newlat *** ${points.latitude}  ++++++//+++++  newlong ***${points.longitude} =======  endlat *** ${points1.latitude}  ++++++//+++++  endlong ***${points1.longitude} ======= ");
-    
+
     final response = await http.get(
       Uri.parse(
           'https://api.openrouteservice.org/v2/directions/driving-car?api_key=${widget.ors_ApiKey}&start=${points.longitude},${points.latitude}&end=${points1.longitude},${points1.latitude}'),
@@ -154,7 +150,7 @@ class _FlutterMapSearchAndPinkRouteState
           data['features'][0]['geometry']['coordinates'];
 
       routePoints = coords.map((coord) => LatLng(coord[1], coord[0])).toList();
-     
+
       markers.add(
         Marker(
           width: 80.0,
@@ -221,7 +217,6 @@ class _FlutterMapSearchAndPinkRouteState
                   urlTemplate:
                       "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                   subdomains: const ['a', 'b', 'c'],
-                  
                 ),
                 MarkerLayer(
                   markers: markers,
@@ -238,28 +233,7 @@ class _FlutterMapSearchAndPinkRouteState
               ],
             ),
           ),
-          Positioned.fill(
-            child: IgnorePointer(
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(widget.locationPinText,
-                        style: widget.locationPinTextStyle,
-                        textAlign: TextAlign.center),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 50),
-                      child: Icon(
-                        widget.locationPinIcon,
-                        size: 50,
-                        color: widget.locationPinIconColor,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
+   
           Positioned(
             top: 0,
             left: 0,
