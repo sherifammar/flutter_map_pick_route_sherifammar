@@ -17,10 +17,7 @@ import 'package:flutter_map_pick_route_sherifammar/flutter_map_pick_route_sherif
 
 ## Usage
 
-FlutterMapSearchAndPinkRoute(
-        center: LatLong(25, 91),// require lat and long
-       ors_ApiKey:"your key of flutter map"
-        )
+you are required API key for flutter map
 
 ```
 FlutterMapSearchAndPinkRoute(
