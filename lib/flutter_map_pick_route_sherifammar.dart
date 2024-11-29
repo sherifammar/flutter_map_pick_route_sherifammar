@@ -326,7 +326,7 @@ class _FlutterMapSearchAndPinkRouteState
                       );
                     }),
                   ),
-                  const SizedBox(
+                 const  SizedBox(
                     height: 10,
                   ),
                   TextFormField(
