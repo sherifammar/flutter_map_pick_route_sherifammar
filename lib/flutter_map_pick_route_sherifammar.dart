@@ -100,7 +100,7 @@ class _FlutterMapSearchAndPinkRouteState
       SnackBar(
         content: Text(
           "Distance : $distanceInMeters /Meters",
-          style: TextStyle(color: Colors.white),
+          style:const TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.green,
       ),
