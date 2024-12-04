@@ -1,6 +1,6 @@
 name: flutter_map_pick_route_sherifammar
 description: "measure distance  and make route between two points and search location by places"
-version: 0.0.8
+version: 0.0.9
 repository: https://github.com/sherifammar/flutter_map_pick_route_sherifammar.git
 
 environment:
@@ -10,8 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_map:
-  geolocator: 
+  flutter_map: ^4.0.0
+  geolocator: ^8.0.5
   http: ^0.13.4
   latlong2: ^0.8.2
   location: ^5.0.3  
