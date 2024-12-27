@@ -23,13 +23,13 @@ import 'package:flutter_map_pick_route_sherifammar/flutter_map_pick_route_sherif
 
 ## Usage
 
-you are required API key for flutter map
+you are required token from openrouteservice web site
 
 ```
  FlutterMapSearchAndPinkRoute(
-          orsApiKey: "your key of flutter map",
-           latidedCurrent: 25,
-          longtideCurrent: 91, // require Api
+          orsApiKey: "token from openrouteservice web site",
+           latidedCurrent: 25, // require latitude
+          longtideCurrent: 91, // require longitude
         )
  
 
